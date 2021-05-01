@@ -1,5 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 import {DataGrid} from '@material-ui/data-grid';
+
+import useTodosList from '../../../hooks/useTodosList';
 
 const columns = [
 	{field: 'id', headerName: 'ID', width: 70},
@@ -8,7 +10,7 @@ const columns = [
 ];
 
 const TODOPaper = () => {
-	const [todos, setTodos] = useState([]);
+  const { data: todos = [] } = useTodosList();
 
 	return <DataGrid rows={todos} columns={columns} pageSize={10} checkboxSelection
 					 onSelectionChange={(selection) => {

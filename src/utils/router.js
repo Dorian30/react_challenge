@@ -7,7 +7,7 @@ const Router = () => {
     return (
         <BrowserRouter>
             <Switch>
-                <Route exact path="/" component={DashBoardPage} />
+                <Route path="/" component={DashBoardPage} />
                 <Route render={() => <Redirect to="/" />} />
             </Switch>
         </BrowserRouter>
